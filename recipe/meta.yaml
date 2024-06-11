@@ -1,5 +1,5 @@
 {% set name = "scalecodec" %}
-{% set version = "1.2.9" %}
+{% set version = "1.2.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/polkascan/py-scale-codec/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5d98c6be382ece8df4e2ccdf8c8647ee79062d9200d3d9377aedb1162e60b5d0
+  sha256: 2f5d21e3b37e1223df389cbba4f881dd7c18358ac1b41bdcce8e674d778b0bc1
 
 build:
   noarch: python
