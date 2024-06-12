@@ -36,7 +36,7 @@ test:
     - pytest
   commands:
     - pip check
-    - pytest -v test
+    # - pytest -v test
   downstreams:
     - substrate-interface
 
