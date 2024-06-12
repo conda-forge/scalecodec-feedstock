@@ -37,8 +37,8 @@ test:
   commands:
     - pip check
     # - pytest -v test
-  downstreams:
-    - substrate-interface
+  # downstreams:
+  #   - substrate-interface
 
 about:
   home: https://github.com/polkascan/py-scale-codec
