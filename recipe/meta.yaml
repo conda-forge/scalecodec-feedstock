@@ -14,7 +14,7 @@ build:
   script: {{ PYTHON }} -m pip install . --use-pep517 -vvv
   script_env:
     - GITHUB_REF=refs/tags/v{{ version }}
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -36,9 +36,7 @@ test:
     - pytest
   commands:
     - pip check
-    # - pytest -v test
-  # downstreams:
-  #   - substrate-interface
+    - pytest -v test
 
 about:
   home: https://github.com/polkascan/py-scale-codec
