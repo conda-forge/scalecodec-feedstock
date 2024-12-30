@@ -14,18 +14,18 @@ build:
   script: {{ PYTHON }} -m pip install . --use-pep517 -vvv
   script_env:
     - GITHUB_REF=refs/tags/v{{ version }}
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
     - base58 >=2.0.1
     - more-itertools
     - requests >=2.24.0
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -34,6 +34,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   commands:
     - pip check
     - pytest -v test
