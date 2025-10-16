@@ -34,7 +34,7 @@ test:
   requires:
     - pip
     - pytest
-    - python  {{ python_min }}
+    - python {{ python_min }}
   commands:
     - pip check
     - pytest -v test
