@@ -1,5 +1,6 @@
 {% set name = "scalecodec" %}
-{% set version = "1.2.11" %}
+{% set version = "1.2.12" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://github.com/polkascan/py-scale-codec/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c0b3fd28822b29b0e81e114554bc8d7dd0b4fcdd6e41dc71435a28b86c3ad7ab
+  sha256: 292a4d854aaffa25b80f932b1200eaf119253be79931e71ec7bbfdf1ed0bdffa
 
 build:
   noarch: python
@@ -18,15 +19,14 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}.*
     - pip
     - setuptools
   run:
     - base58 >=2.0.1
     - more-itertools
     - requests >=2.24.0
-    - python >=3.6
-
+    - python >={{ python_min }}
 test:
   source_files:
     - test
@@ -34,6 +34,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}.*
   commands:
     - pip check
     - pytest -v test
