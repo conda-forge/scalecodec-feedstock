@@ -19,14 +19,14 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python {{ python_min }}.*
     - pip
     - setuptools
   run:
     - base58 >=2.0.1
     - more-itertools
     - requests >=2.24.0
-    - python >={{ python_min }}.*
+    - python >={{ python_min }}
 test:
   source_files:
     - test
@@ -34,7 +34,7 @@ test:
   requires:
     - pip
     - pytest
-    - python {{ python_min }}
+    - python {{ python_min }}.*
   commands:
     - pip check
     - pytest -v test
